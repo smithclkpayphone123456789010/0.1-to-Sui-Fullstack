@@ -7,8 +7,6 @@ module admin::week_two_tests {
     use sui::sui::SUI;
     // use std::debug;
 
-    //const ENotImplemented: u64 = 0;
-
     public struct DOGE {}
 
     #[test]

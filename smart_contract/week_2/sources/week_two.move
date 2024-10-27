@@ -15,13 +15,13 @@ module admin::week_two {
     //==============================================================================================
     // Constants
     //==============================================================================================
-    //// You already have a Profile
-    const EProfileExist: u64 = 1;
-    const EProfileDoesNotExist: u64 = 2;
+
     //==============================================================================================
     // Error codes
     //==============================================================================================
-
+    //// You already have a Profile
+    const EProfileExist: u64 = 1;
+    
     //==============================================================================================
     // Structs 
     //==============================================================================================
@@ -165,7 +165,11 @@ module admin::week_two {
     public fun get_balance<T>(
         folder: &Folder
     ): u64{
-        balance::value(dynamic_field::borrow<TypeName, Balance<T>>(&folder.id, type_name::get<T>()))
+        if(dynamic_field::exists_(&folder.id, type_name::get<T>())){
+            balance::value(dynamic_field::borrow<TypeName, Balance<T>>(&folder.id, type_name::get<T>()))
+        }else{
+            0
+        }   
     }
 
     //==============================================================================================

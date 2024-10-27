@@ -1,29 +1,27 @@
 
-module admin::week_one_alt {
+module admin::week_one {
     //==============================================================================================
     // Dependencies
     //==============================================================================================
     use std::string::{String};
     use sui::event;
-    use sui::table::{Self, Table};
 
     //==============================================================================================
     // Constants
     //==============================================================================================
-    /// You already have a Profile
-    const EProfileExist: u64 = 1;
+
     //==============================================================================================
     // Error codes
     //==============================================================================================
-
+    /// You already have a Profile
+    const EProfileExist: u64 = 1;
+    
     //==============================================================================================
     // Structs 
     //==============================================================================================
     public struct State has key{
         id: UID,
-        // users: vector<address>,
-        //alternative <owner_address, profile_object_address>
-        users: Table<address, address>,
+        users: vector<address>,
     }
     
     public struct Profile has key{
@@ -46,7 +44,7 @@ module admin::week_one_alt {
     fun init(ctx: &mut TxContext) {
         transfer::share_object(State{
             id: object::new(ctx), 
-            users: table::new(ctx),
+            users: vector::empty(),
         });
     }
 
@@ -60,7 +58,7 @@ module admin::week_one_alt {
         ctx: &mut TxContext
     ){
         let owner = tx_context::sender(ctx);
-        assert!(!table::contains(&state.users, owner), EProfileExist);
+        assert!(!vector::contains(&state.users, &owner), EProfileExist);
         let uid = object::new(ctx);
         let id = object::uid_to_inner(&uid);
         let new_profile = Profile {
@@ -69,7 +67,7 @@ module admin::week_one_alt {
             description,
         };
         transfer::transfer(new_profile, owner);
-        table::add(&mut state.users, owner, object::id_to_address(&id));
+        vector::push_back(&mut state.users, owner);
         event::emit(ProfileCreated{
             profile: object::id_to_address(&id),
             owner,
@@ -81,12 +79,8 @@ module admin::week_one_alt {
     public fun check_if_has_profile(
         user_wallet_address: address,
         state: &State,
-    ): Option<address>{
-        if(table::contains(&state.users, user_wallet_address)){
-            option::some(*table::borrow(&state.users, user_wallet_address))
-        }else{
-            option::none()
-        }
+    ): bool {
+        vector::contains(&state.users, &user_wallet_address)
     }
 
     //==============================================================================================
