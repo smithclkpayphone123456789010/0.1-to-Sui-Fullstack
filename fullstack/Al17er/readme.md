@@ -42,14 +42,14 @@
 ## 群里分享学习笔记
 
 - [x] 第一篇笔记:https://blog.csdn.net/qq_46151595/article/details/144876638?sharetype=blogdetail&sharerId=144876638&sharerefer=PC&sharesource=qq_46151595&spm=1011.2480.3001.8118
-- [] 第二篇笔记
+- [x] 第二篇笔记:https://juejin.cn/post/7455123456071942163
 - [] 第三篇笔记
 - [] 第四篇笔记
 
 ## 对外输出学习笔记
 
 - [x] 第一篇笔记【[Sui Move 前端共学（笔记一）](https://blog.csdn.net/qq_46151595/article/details/144876638?sharetype=blogdetail&sharerId=144876638&sharerefer=PC&sharesource=qq_46151595&spm=1011.2480.3001.8118)】
-- [] 第二篇笔记【学习笔记链接】
+- [x] 第二篇笔记【[Sui Move 前端共学（笔记二）-ref表单域](https://juejin.cn/post/7455123456071942163)
 - [] 第三篇笔记【学习笔记链接】
 - [] 第四篇笔记【学习笔记链接】
 
