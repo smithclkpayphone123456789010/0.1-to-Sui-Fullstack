@@ -8,7 +8,8 @@
 
 
 ## 作业
-- [x] 第一周: https://github.com/huzhengen/sui-dapp-demo-1
+- [x] 第一周仓库: https://github.com/huzhengen/sui-dapp-demo-1
+- [x] 第一周截图: ![第一周截图](./week1/week1.png)
 - [] 第二周:
 - [] 第三周:
 - [] 第四周:
