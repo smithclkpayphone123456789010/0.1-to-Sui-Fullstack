@@ -21,7 +21,7 @@
 * 關注b站
 ![关注截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250103_bili_follow.png)
 * 關注推特(x)
-![关注截图](./images/你的图片地址)
+![关注截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250103_x_follow.png)
 
 ## 为共学营宣传（在朋友圈或者群聊中转发海报/文章）
 
