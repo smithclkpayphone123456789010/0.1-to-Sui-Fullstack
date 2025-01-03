@@ -4,11 +4,11 @@ export type Profile = {
     description: string,
 }
 
-export type State = {
+export interface State {
     users: User[]
 }
 
-export type User = {
+export interface User {
     owner: string,
     profile: string,
 }
