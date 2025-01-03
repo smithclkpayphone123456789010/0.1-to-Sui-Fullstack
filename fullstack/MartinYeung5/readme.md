@@ -26,7 +26,8 @@
 ## 为共学营宣传（在朋友圈或者群聊中转发海报/文章）
 
 - [] 宣传截图:
-![宣传截图](./images/你的图片地址)
+* 20250103 - twitter - repost
+![宣传截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250103_x_repost.png)
 
 ## 每周课程学习
 
