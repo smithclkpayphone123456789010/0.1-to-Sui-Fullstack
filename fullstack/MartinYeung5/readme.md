@@ -36,7 +36,9 @@
 ## 参加直播答疑
 
 - [] 第一周:
+* 第一課
 ![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20241230_live.png)
+* 第二課
 ![学习记录截图](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250102_live.png)
 
 - [] 第二周:![学习记录截图](./images/你的图片地址)
