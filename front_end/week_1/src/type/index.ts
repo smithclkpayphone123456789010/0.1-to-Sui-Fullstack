@@ -1,3 +1,9 @@
+/*    public struct Profile has key{
+        id: UID,
+        name: String,
+        description: String,
+    }*/
+
 export type Profile = {
     id: string,
     name: string,
