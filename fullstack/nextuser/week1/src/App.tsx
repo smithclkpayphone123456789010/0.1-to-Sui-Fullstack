@@ -7,6 +7,8 @@ import {queryProfile,createProfileTx,removeProfileTx} from './lib/contracts/inde
 import { Profile } from "./lib/contracts/Profile";
 import { useSignAndExecuteTransaction ,useAccounts,useSuiClient,useCurrentAccount} from "@mysten/dapp-kit";
 import { config } from "@/networkConfig";
+import {Button} from "@/components/ui/button"
+import tokens from "../images/tokens.jpg"
 
 function App() {
   let [name,setName ] = useState<string>("");
@@ -69,14 +71,14 @@ function App() {
     <>
       <header className="border-b">
         <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-26 items-center justify-between">
             {/* Logo 部分 */}
             <div className="flex items-center">
-              <h1 className="text-xl font-bold">Logo</h1>
+              <img className="h-24 w-24" src={tokens} ></img>
             </div>
             
             {/* 按钮部分 */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4" >
               <ConnectButton />
             </div>            
 
@@ -88,7 +90,7 @@ function App() {
         <div className="flex ">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-              名称
+              Profile Name
             </label>
             <input
               type="text"
@@ -102,11 +104,11 @@ function App() {
           
           <div>
             <label htmlFor="description" className="flex block text-sm font-medium text-gray-700">
-              描述
+              Description
             </label>
             <textarea
               id="description"
-              rows={1}
+              rows={2}
               value={desc}
               onChange={(e)=>setDesc(e.target.value)}
               name="description"
@@ -114,14 +116,16 @@ function App() {
               placeholder="请输入描述"
             />
           </div>
-          
-          <button
+
+        </div>
+        <div>
+          <Button
             type="button"
-            className=" justify-center rounded-md border  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            className="ustify-center rounded-md border  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             onClick={createPofile}
           >
-            提交
-          </button>
+            Add Profile
+          </Button>
         </div>
 
       </div>
