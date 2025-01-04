@@ -1,5 +1,5 @@
 ## 个人简介
-- 工作经验: 5年+
+- 工作经验: x年+
 - 技术栈: `java` `javascript` `solidity` 
 > 重要提示 请认真写自己的简介
 - 多年web2+web3開發經驗，10歲開始學編程
@@ -9,6 +9,8 @@
 
 ## 作业
 - [] 第一周:
+![task1](https://github.com/MartinYeung5/0.1-to-Sui-Fullstack/blob/main/fullstack/MartinYeung5/images/20250104_task1_screencap.png)
+
 - [] 第二周:
 - [] 第三周:
 - [] 第四周:
