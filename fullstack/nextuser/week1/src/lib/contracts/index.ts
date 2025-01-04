@@ -75,6 +75,18 @@ export const createProfileTx = (name:string,
         return tx;
 }
 
+export const removeProfileTx = (id:string,
+    stateID:string) =>{
+    const tx = new Transaction();
+    tx.moveCall({arguments:[tx.object(config.state),tx.object(id)],
+    package:config.pkg, 
+    module:"week_one_alt", 
+    function:"remove_profile"})
+    //必须设置budget,因为合约create_profile内部会asset, 导致客户端无法估算gas值
+    tx.setGasBudget(1e7)
+return tx;
+}
+
 function testQueryState(suiClient: SuiClient,){
 
     queryState(suiClient,config.state).then((state:State)=>console.log(state.id.id,state.users))

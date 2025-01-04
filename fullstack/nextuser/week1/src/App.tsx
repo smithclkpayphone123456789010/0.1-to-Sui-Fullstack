@@ -3,9 +3,9 @@ import { Box, Container, Flex, Heading } from "@radix-ui/themes";
 import { WalletStatus } from "./WalletStatus";
 import {DataTable} from './DataTable'
 import { useState,useEffect } from "react";
-import {queryProfile,createProfileTx} from './lib/contracts/index';
+import {queryProfile,createProfileTx,removeProfileTx} from './lib/contracts/index';
 import { Profile } from "./lib/contracts/Profile";
-import { useSignAndExecuteTransaction ,useAccounts,useSuiClient} from "@mysten/dapp-kit";
+import { useSignAndExecuteTransaction ,useAccounts,useSuiClient,useCurrentAccount} from "@mysten/dapp-kit";
 import { config } from "@/networkConfig";
 
 function App() {
@@ -15,13 +15,35 @@ function App() {
   const { mutate: signAndExecuteTransaction }  = useSignAndExecuteTransaction();
   let accounts = useAccounts();
   let suiClient = useSuiClient();
+  let curr_address = useCurrentAccount()?.address
   useEffect(()=>{
     queryProfile(suiClient).then(setProfiles)
-  },[accounts])
+  },[curr_address,accounts])
 
   function getOwnerName(addr:string){
     let account = accounts.find(item=>item.address === addr)
     return account ?  account.label : addr;
+  }
+
+  let removePofile = (id:string)=>{
+    let tx = removeProfileTx(id,config.state)
+    
+    signAndExecuteTransaction(
+      {
+        transaction: tx,
+        chain: 'sui:testnet',
+      },
+      {
+        onSuccess: (result) => {
+          console.log("remove Profile:executed transaction", result);
+          queryProfile(suiClient).then(setProfiles)
+          
+        },
+        onError:(error) =>{
+          console.log("remove Profile:error:",error);
+        }
+      },
+    );
   }
   let createPofile = ()=>{
     let tx = createProfileTx(name,desc,config.state)
@@ -103,7 +125,7 @@ function App() {
         </div>
 
       </div>
-      <DataTable profiles={profiles} ownerName={getOwnerName}>
+      <DataTable profiles={profiles} ownerName={getOwnerName} account={curr_address} remove={removePofile}>
 
       </DataTable>
     </>

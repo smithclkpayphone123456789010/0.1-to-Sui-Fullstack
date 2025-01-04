@@ -12,7 +12,7 @@ import {Profile} from './lib/contracts/Profile'
 //   return data;
 // };
 
-export const DataTable = (props : {profiles:Profile[],ownerName:(val :string)=>string}) => {
+export const DataTable = (props : {profiles:Profile[],ownerName:(val :string)=>string,account:string,remove:(string)=>void}) => {
   
   console.log("profiles:",props.profiles);
   return (
@@ -25,7 +25,7 @@ export const DataTable = (props : {profiles:Profile[],ownerName:(val :string)=>s
             <th className="py-2 px-4 border-b">Name</th>
             <th className="py-2 px-4 border-b">Description</th>
             <th className="py-2 px-4 border-b">Owner</th>
-            <th className="py-2 px-4 border-b">ID</th>
+            <th className="py-2 px-4 border-b">Operation</th>
 
           </tr>
         </thead>
@@ -36,7 +36,7 @@ export const DataTable = (props : {profiles:Profile[],ownerName:(val :string)=>s
               <td className="py-2 px-4 border-b">{item.name}</td>
               <td className="py-2 px-4 border-b">{item.description}</td>
               <td className="py-2 px-4 border-b">{props.ownerName(item.owner)}</td>
-              <td className="py-2 px-4 border-b">{item.id.id}</td>
+              <td className="py-2 px-4 border-b"> { props.account == item.owner  && <button onClick={()=>{props.remove(item.id.id)}}>remove</button> }</td>
 
             </tr>
           ))}
