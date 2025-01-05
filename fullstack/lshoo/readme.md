@@ -2,13 +2,14 @@
 - 工作经验: 10+年
 - 技术栈: `Rust` `Move`
 > 重要提示 请认真写自己的简介
-- 多年web2开发经验，对web3特别感兴趣，投入其中
-- 联系方式: tg: `xxx`
+- 多年web2 + 3开发经验
+- 联系方式: tg: `lshoo`
 
 
 
 ## 作业
-- [] 第一周:
+- [x] 第一周:![001](./images/week1/week-1-create-profile.jpg)
+            ![002](./images/week1/week-1-profile-list.jpg)
 - [] 第二周:
 - [] 第三周:
 - [] 第四周:

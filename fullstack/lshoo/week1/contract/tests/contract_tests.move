@@ -17,7 +17,7 @@ fun test_create_profile() {
     let sc = &mut sc0;
 
     let name = string::utf8(b"Alice");
-    let desc = string::utf8(b"degen");
+    let desc = string::utf8(b"James Bond");
 
     contract::init_for_testing(ts::ctx(sc));
 
@@ -51,7 +51,9 @@ fun test_create_profile() {
         );
 
         assert_eq(profile.get_address(), profile_address);
-        
+        assert_eq(profile.get_name(), name);
+        assert_eq(profile.get_description(), desc);
+
         ts::return_to_sender(sc, profile);
         ts::return_shared(state);
     };
