@@ -20,7 +20,7 @@ function App() {
 
     useEffect(() => {
         const fetchState = async () => {
-            const state = await queryState();
+            const state = await queryState(null);
             console.log(state);
 
             setState(state);

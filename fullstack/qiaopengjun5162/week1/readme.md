@@ -1,5 +1,7 @@
 # Resource Manager
 
+![resource_manager](../images/resource_manager.png)
+
 ## 实操
 
 ```bash

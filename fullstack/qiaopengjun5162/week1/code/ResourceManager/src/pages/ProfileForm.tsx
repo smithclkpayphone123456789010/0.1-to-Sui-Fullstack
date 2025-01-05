@@ -20,7 +20,7 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ name, setName, description, s
             </div>
             <div className="space-y-4">
                 <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-gray-400">
+                    <label htmlFor="name" className="text-sm font-medium text-white">
                         Name
                     </label>
                     <input
